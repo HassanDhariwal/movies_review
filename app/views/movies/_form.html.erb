@@ -1,6 +1,9 @@
-<%= form_with(model: movie) do |form| %>
+
+<%= form_for @movie, html: { multipart: true } do |form| %>
+<!-- i canot under stnd this path -->
+
   <% if movie.errors.any? %>
-    <div style="color: red">
+    <div style="color: red" class="input-group mb-3">
       <h2><%= pluralize(movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
 
       <ul>
@@ -11,7 +14,7 @@
     </div>
   <% end %>
 
-  <div>
+  <div  >
     <%= form.label :title, style: "display: block" %>
     <%= form.text_field :title %>
   </div>
@@ -35,8 +38,13 @@
     <%= form.label :ratting, style: "display: block" %>
     <%= form.text_field :ratting %>
   </div>
+  <div>
+    <%= form.label :image, style: "display: block" %>
+    <%= form.file_field :image %>
+  </div>
 
   <div>
     <%= form.submit %>
   </div>
 <% end %>
+  
