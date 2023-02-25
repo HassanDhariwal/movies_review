@@ -1,35 +1,18 @@
-
 <form>
-<div  id="<%= dom_id movie %>">
-
-  <p>
-<%= image_tag( root_url + "/imag/KGF.jpg", size: "250x350", :alt => "rss feed") -%>
-  </p>
-  <p>
-    <strong>Title:</strong>
-    <%= movie.title %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= movie.description %>
-  </p>
-
-  <p>
-    <strong>Movie length:</strong>
-    <%= movie.movie_length %>
-  </p>
-
-  <p>
-    <strong>Director:</strong>
-    <%= movie.director %>
-  </p>
-
-  <p>
-    <strong>Ratting:</strong>
-    <%= movie.ratting %>
-  </p>
-
-</div>
+<table class="table" style="width:35%">
+  <tr>
+    <th scope="col">Title</th>
+    <th scope="col">Description</th>
+    <th scope="col">Movie length</th>
+    <th scope="col">Director</th>
+    <th scope="col">Ratting</th>
+  </tr>
+  <tr>
+    <td scope="row"><%= movie.title %></td>
+    <td scope="row"><%= movie.description %></td>
+    <td scope="row"><%= movie.movie_length %></td>
+    <td scope="row"><%= movie.ratting %></td>
+  </tr>
+</table>
 </form>
 

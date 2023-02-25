@@ -44,6 +44,7 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
+gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem 'paperclip', '~> 6.1'#is used for image upload  manage to  acctive recode 
 # gem "kt-paperclip", "~> 6.4", ">= 6.4.1"
 

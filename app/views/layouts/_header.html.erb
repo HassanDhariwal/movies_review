@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
+    <ul style="list-style-type: none", class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item active">
+        <a><%= link_to "HOME", movies_path, class:"active" %></a>
+      </li>
+      <% if user_signed_in? %>
+      <li class="nav-item">
+        <a class="navbar-brand" ><%= link_to "new Movie", new_movie_path %></a>
+      </li>
+      <li class="nav-item ">
+        <a class="navbar-brand" ><%= link_to "Account",   edit_user_registration_path %></a>
+      </li>
+      <li class="nav-item ">
+        <a class="navbar-brand" ><%= link_to "sign Up", new_user_registration_path %></a>
+      </li>
+      <li class="nav-item ">
+        <a class="navbar-brand"><%= link_to "Sign in", new_user_session_path %></a>
+      </li>
+      <% end %>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</div>
+</nav>
+
+
