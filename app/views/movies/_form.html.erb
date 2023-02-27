@@ -3,7 +3,11 @@
 <head>
 <style>
   div{
-    color: whitesmoke ;
+   color: black;
+ }
+ h6{
+  color: whitesmoke;
+ }
 
   }
 </style>
@@ -25,37 +29,49 @@
   <% end %>
 
   <div>
+    <h6>
     <%= form.label :title, style: "display: block" %>
+  </h6>
     <%= form.text_field :title %>
   </div>
 
   <div>
+    <h6>
     <%= form.label :description, style: "display: block" %>
+    </h6>
     <%= form.text_area :description %>
   </div>
 
   <div>
+    <h6>
     <%= form.label :movie_length, style: "display: block" %>
+    </h6>
     <%= form.text_field :movie_length %>
   </div>
 
   <div>
+    <h6>
     <%= form.label :director, style: "display: block" %>
+    </h6>
     <%= form.text_field :director %>
   </div>
 
   <div>
+    <h6>
     <%= form.label :ratting, style: "display: block" %>
+    </h6>
     <%= form.text_field :ratting %>
   </div>
   <div>
+    <h6>
     <%= form.label :image, style: "display: block" %>
+    </h6>
     <%= form.file_field :image %>
   </div>
 
-  <div>
+  <button>
     <%= form.submit %>
-  </div>
+  </button>
 <% end %>
   </body>
   </html>

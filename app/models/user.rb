@@ -4,4 +4,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 has_many :movies
-end
+has_many :reviews, dependent: :destroy #if user deleted then reviews also deleted
+ end

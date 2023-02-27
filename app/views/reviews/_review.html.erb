@@ -1,0 +1,27 @@
+<h5 style="color:whitesmoke;">_revie shows </h5>
+<style type="text/css">
+  strong{
+    color: whitesmoke;
+  }
+  a{
+    color: whitesmoke;
+  }
+
+</style>
+<div id="<%= dom_id review %>">
+  <p>
+    <strong>User Email:</strong>
+    <a><%= review.user&.email%></a> here '&' used agr user ke email show nahi hp raha previous review jo add kiya hn un ke vaja xy xo ahm & lagin gain ya to ja ky user add kr dain  
+  </p>
+
+  <p>
+    <strong>Rating:</strong>
+    <a><%= review.rating %></a>
+  </p>
+
+  <p>
+    <strong>Comment:</strong>
+    <a><%= review.comment %></a>
+  </p>
+
+</div>

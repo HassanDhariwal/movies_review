@@ -1,12 +1,17 @@
-<%= image_tag( root_url + "/imag/KGF.jpg", size: "250x350", :alt => "rss feed") -%>
 <%= render @movie %>
+
+<%= image_tag(@movie.image.url(:medium)) -%>
+
+
 <div>
-  <button>
+  <button style="background-color:black;">
   <%= link_to "Edit this movie", edit_movie_path(@movie) %>
   </button> |
-  <button>
+  <button style="background-color:black;">
   <%= link_to "Back to movies", movies_path %>
   </button>
-
-  <%= button_to "Destroy this movie", @movie, method: :delete %>
+  <br>
+  <button style="background-color:black;">
+  <%= link_to "Destroy this movie", @movie, method: :delete %>
+  </button>
 </div>
