@@ -1,16 +1,19 @@
 <form>
 <table class="table" style="width:35%">
-  <tr>
+  <tr style="color: whitesmoke;">
     <th scope="col">Title</th>
     <th scope="col">Description</th>
     <th scope="col">Movie length</th>
     <th scope="col">Director</th>
     <th scope="col">Ratting</th>
+    <th colspan="3"></th>
+
   </tr>
-  <tr>
+  <tr style="color: whitesmoke;">
     <td scope="row"><%= movie.title %></td>
     <td scope="row"><%= movie.description %></td>
     <td scope="row"><%= movie.movie_length %></td>
+    <td scope="row"><%= movie.director %></td>
     <td scope="row"><%= movie.ratting %></td>
   </tr>
 </table>

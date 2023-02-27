@@ -13,5 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+body {
+    background-image: url("/imag/money_heist1.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: bottom;    
+    backdrop-filter: blur(1px);
+     }
+     .review_title {
+     margin: 0 0 20px 0
+     }
+     .reviews{
+     padding: 15px 0;
+     border-bottom: 1px solid #EAEAEA;
+     }
+     .star-rating {
+     padding-bottom: 8px;
+}

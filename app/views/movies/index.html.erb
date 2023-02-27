@@ -1,15 +1,22 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Movies</h1>
+<h1 style="color: whitesmoke;">Movies</h1>
 
 <div id="movies">
   <% @movies.each do |movie| %>
     <%= render movie %>
-    <button>
+    <button style ="background-color: black;">
       <%= link_to "Show this movie", movie %>
     </button>
   <% end %>
 </div>
 
-<button><%= link_to "New movie", new_movie_path %></button>
+<button style="background-color: black;"><%= link_to "New movie", new_movie_path %></button>
 
+<!-- <div class="row">
+  < @movies.each d0 |movie| %>
+  <div class="col-sm-6 col-md-3">
+  <div class="thumbnail">
+    < link_to (image_tag movie.img.url(:medium), class:'image', movie) %>
+  </div>
+</div> -->
