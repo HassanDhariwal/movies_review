@@ -55,7 +55,9 @@ class ReviewsController < ApplicationController
     @review.destroy
 
     respond_to do |format|
-      format.html { redirect_to reviews_url, notice: "Review was successfully destroyed." }
+      format.html { redirect_to root_path, notice: "Review was successfully destroyed." }
+      # format.html { redirect_to reviews_url, notice: "Review was successfully destroyed." } 
+      #here redirect_to used to rediect path and here path is like {reviews_url} and {root_path isroot "movies#index"}   
       format.json { head :no_content }
     end
   end

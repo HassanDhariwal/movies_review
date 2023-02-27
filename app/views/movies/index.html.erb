@@ -14,9 +14,19 @@
 <button style="background-color: black;"><%= link_to "New movie", new_movie_path %></button>
 
 <!-- <div class="row">
-  < @movies.each d0 |movie| %>
+  < @movies.each do |movie| %>
   <div class="col-sm-6 col-md-3">
   <div class="thumbnail">
     < link_to (image_tag movie.img.url(:medium), class:'image', movie) %>
   </div>
 </div> -->
+<!-- 
+they both are same 
+<div class="row">
+      < @movies.each do |movie| %>
+      <div class="col-sm-6 col-md-3">
+        <div class="thumbnail">
+        < link_to (image_tag @movies.image.url(:medium), class:'image', movie) %>
+
+        </div>
+      </div> -->
