@@ -6,12 +6,12 @@ button{
   color: whitesmoke;
 }
 </style>
+<div style="text-align:center">
 <h1>New review</h1>
 
 <%= render "form", review: @review %>
-
+ 
 <br>
+  <button type="submit" class="btn btn-outline-secondary" style="color:black;"> <%= link_to "Back to reviews", movies_path(@movie) %></button>
 
-<button style="background-color:black;">
-  <%= link_to "Back to reviews", reviews_path %>
-</button>
+</div>

@@ -4,7 +4,9 @@
 
 <br>
 
-<button style="background-color: black;">
-  <%= link_to "Show this review", @review %> |
-  <%= link_to "Back to reviews", reviews_path %>
+<button type="button" class="btn btn-secondary">
+  <%= link_to "Show this review", "#" %>
+</button> <br>
+<button type="button" class="btn btn-secondary">
+  <%= link_to "Back to reviews", movies_path(@movie) %>
 </button>

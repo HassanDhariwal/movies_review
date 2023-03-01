@@ -1,10 +1,16 @@
-<%= form_with(model: review) do |form| %>
-  <% if review.errors.any? %>
+<style>
+  label{
+    color: whitesmoke;
+  }
+</style>
+<div style="text-align:center" >
+<%= form_for([@movie ,@review ]) do |form| %><!--nested routes -->
+  <% if @review.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(review.errors.count, "error") %> prohibited this review from being saved:</h2>
 
       <ul>
-        <% review.errors.each do |error| %>
+        <% @review.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
@@ -12,16 +18,15 @@
   <% end %>
 
   <div>
-    <%= form.label :rating, style: "display: block" %>
-    <%= form.number_field :rating %>
+  <div class="mb-3">
+    <label class="form-label"><%= form.label :rating, style: "display: block"%> </label>
+    <div class="form-text"><%= form.number_field :rating %></div>
   </div>
 
-  <div>
-    <%= form.label :comment, style: "display: block" %>
-    <%= form.text_area :comment %>
+  <div class="mb-3">
+    <label  class="form-label"> <%= form.label :comment, style: "display: block"%></label>
+    <div class="form-text"><%= form.text_area :comment %></div>
   </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
+  <button type="submit" class="btn btn-outline-secondary"><%= form.submit %></button>
 <% end %>
+</div>

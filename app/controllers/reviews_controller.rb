@@ -1,15 +1,10 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
+  before_action :set_movie
 
   # GET /reviews or /reviews.json
-  def index
-    @reviews = Review.all
-  end
 
-  # GET /reviews/1 or /reviews/1.json
-  def show
-  end
 
   # GET /reviews/new
   def new
@@ -25,11 +20,13 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.user_id = current_user.id  
     #user id assign to dem when user create reviews 
+    @review.movie_id = @movie.id
+
+    # redirect_to @movie, notice: "Review was successfully created."
 
     respond_to do |format|
       if @review.save
-        format.html { redirect_to review_url(@review), notice: "Review was successfully created." }
-        format.json { render :show, status: :created, location: @review }
+        format.html { redirect_to @movie, notice: "Review was successfully created." }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @review.errors, status: :unprocessable_entity }
@@ -39,15 +36,17 @@ class ReviewsController < ApplicationController
 
   # PATCH/PUT /reviews/1 or /reviews/1.json
   def update
-    respond_to do |format|
-      if @review.update(review_params)
-        format.html { redirect_to review_url(@review), notice: "Review was successfully updated." }
-        format.json { render :show, status: :ok, location: @review }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @review.errors, status: :unprocessable_entity }
-      end
-    end
+
+ redirect_to @movie, notice: "Review was successfully updated."
+
+    # respond_to do |format|
+    #   if @review.update(review_params)
+    #     format.html { redirect_to @movie, notice: "Review was successfully updated." }
+    #   else
+    #     format.html { render :edit, status: :unprocessable_entity }
+    #     format.json { render json: @review.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # DELETE /reviews/1 or /reviews/1.json
@@ -67,6 +66,11 @@ class ReviewsController < ApplicationController
     def set_review
       @review = Review.find(params[:id])
     end
+
+    def set_movie
+      @movie = Movie.find(params[:movie_id])
+    end
+
 
     # Only allow a list of trusted parameters through.
     def review_params
